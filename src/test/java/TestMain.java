@@ -12,4 +12,13 @@ public class TestMain {
         assertEquals(true, Main.comp(a, b));
     }
 
+    @Test
+    public void test2() {
+        int[] a = new int[]{2,2,3};
+        int[] b = new int[]{9,9,4};
+        assertEquals(false, Main.comp(a, b));
+    }
+
+
+
 }
