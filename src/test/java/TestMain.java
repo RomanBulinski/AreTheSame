@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestMain {
 
-
     @Test
     public void test1() {
         int[] a = new int[]{121, 144, 19, 161, 19, 144, 19, 11};

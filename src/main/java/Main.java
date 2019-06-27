@@ -4,9 +4,7 @@ public class Main {
 
     public static boolean comp(int[] a, int[] b) {
 
-        if (a == null && b == null) {
-            return true;
-        }
+
         if (a == null || b == null) {
             return false;
         }
@@ -28,7 +26,6 @@ public class Main {
                 mapA.put(n * n, tempValue + 1);
             }
         }
-
         for (int m : b) {
             if (!mapB.keySet().contains(m)) {
                 mapB.put(m, 1);
@@ -37,43 +34,17 @@ public class Main {
                 mapB.put(m, tempValue + 1);
             }
         }
-
         Object[] keysA = mapA.keySet().toArray();
         Object[] keysB = mapB.keySet().toArray();
+        Object[] valueA = mapA.values().toArray();
+        Object[] valueB = mapB.values().toArray();
 
-        boolean result = true;
-        for (Object x : keysA) {
 
-            if (mapA.get(x) == mapB.get(x)) {
-                result = true;
-            } else {
-                result = false;
-                break;
-            }
+        if( Arrays.equals(keysA, keysB) && Arrays.equals(valueA, valueB)){
+            return true;
         }
-        return result;
-
+        return false;
     }
-
-
-//        Set<Integer> aset = new HashSet();
-//       Set<Integer> set = new HashSet();
-//
-//        for(int n : a ){
-//            set.add(n*n);
-//            aset.add(n);
-//        }
-//        for(int m : b ){
-//            set.add(m);
-//        }
-//
-//        System.out.println(set.size() );
-//        System.out.println(a.length);
-//
-//        if(set.size() == aset.size() ){
-//            return  true;
-//        }
-//        return  false;
 
 
 }
